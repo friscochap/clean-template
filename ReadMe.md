@@ -14,7 +14,7 @@ Projects reside under the src folder and were created using the following dotnet
     dotnet new webapp   -o src\WebApp
     dotnet new console  -o src\Console
 
-An mstest unit test project for each of the above projects was also created under the tests folder with ".Test" added to the end of the project name:
+An mstest unit test project for each of the above projects was also created under the tests folder with ".Tests" added to the end of the project name:
 
     dotnet new mstest -o tests\Application -n Application.Tests
     dotnet new mstest -o tests\Common -n Common.Tests
