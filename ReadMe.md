@@ -16,12 +16,12 @@ Projects reside under the src folder and were created using the following dotnet
 
 An mstest unit test project for each of the above projects was also created under the tests folder with ".Test" added to the end of the project name:
 
-    dotnet new mstest -o tests\Application.Test
-    dotnet new mstest -o tests\Common.Test
-    dotnet new mstest -o tests\Core.Test
-    dotnet new mstest -o tests\Domain.Test
-    dotnet new mstest -o tests\Infrastructure.Test
-    dotnet new mstest -o tests\Persistance.Test
-    dotnet new mstest -o tests\WebApi.Test
-    dotnet new mstest -o tests\WebApp.Test
-    dotnet new mstest -o tests\Console.Test
+    dotnet new mstest -o tests\Application -n Application.Tests
+    dotnet new mstest -o tests\Common -n Common.Tests
+    dotnet new mstest -o tests\Core -n Core.Tests
+    dotnet new mstest -o tests\Domain -n Domain.Tests
+    dotnet new mstest -o tests\Infrastructure -n Infrastructure.Tests
+    dotnet new mstest -o tests\Persistance -n Persistance.Tests
+    dotnet new mstest -o tests\WebApi -n WebApi.Tests
+    dotnet new mstest -o tests\WebApp -n WebApp.Tests
+    dotnet new mstest -o tests\Console -n Console.Tests
