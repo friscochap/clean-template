@@ -7,10 +7,10 @@ Rename-Item -Path .\CleanArchitecture.sln -NewName .\$app_name.sln
 foreach ($project in $app_projects) {
     $name = ".\src\" + $project + "\" + $project + ".csproj"
     $newName = $app_name + "." + $project + ".csproj"
-    $message = "Renaming " + $name + " to " + $newName
     $oldProjectName = $project + ".csproj";
     $newProjectName = $app_name + "." + $oldProjectName;
 
+    $message = "Renaming " + $project + " to " + $newName
     Write-Output $message
 
     Rename-Item -Path $name -NewName $newName
