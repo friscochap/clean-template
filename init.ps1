@@ -1,10 +1,21 @@
 $app_name = $args[0]
 
 if ([string]::IsNullOrEmpty($app_name)) {
+    $curPath = get-item . | Split-Path -Leaf
+    "No application name specified. Use " + $curPath + "?"
+    "[Y] Yes, [N] No (default is 'N')"
+    ""
+    $continue = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
+    if ('Y' -eq [char]::ToUpper($continue.Character)) {
+        $app_name = $curPath
+    }
+    else  {
     "Specify a new name for the executable"
-    "    .\init.ps1 ApplicationName"
+    "    .\init.ps1 " + $curPath
+    }
 }
-else {
+if (![string]::IsNullOrEmpty($app_name)) {
     $app_projects = Get-ChildItem .\src -Name
     $sln_contents = Get-Content -path .\CleanArchitecture.sln -Raw
     $message = "Renaming to " + $app_name
